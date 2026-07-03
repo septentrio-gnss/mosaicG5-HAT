@@ -4,7 +4,7 @@
 |------|-------|
 |Author|  [laekaz](https://github.com/laekaz)|
 |Maintainer| [(Septentrio gnss github user)](githubuser@septentrio.com)|
-|external website|      |
+|external website| https://github.com/septentrio-gnss/mosaicG5-HAT  |
 |License| [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) and [open source](https://www.oshwa.org/definition/) |
 |Avalable to purchase here:| |
 
@@ -176,15 +176,30 @@ When using the external power supply, make sure it is not more than 5V. If more 
 
 #### USB communication
 #### Serial communication
-A simple way to communicate with the mosaic-G5 receiver is to connect one of the UART, it offer 2 UARTs connections.
+A simple way to communicate with the mosaic-G5 receiver is to connect one of the UART, it offers 2 UARTs connections.
 
-* Both UART connections are  connected to the Raspberry-Pi. 
+* Both UART connections are  connected to the Raspberry-Pi for easie integration.
 
-The mosaiC-G5 COM is connected to the rspberry-Pi for easie integration.
+#### RxTools
 
-* The UART2 connection of the mosaic is exposed via Pin header on the board. This can be usuable to connect aan FTDI converter(eg. serial to Bluetooth or TLL to RS232 converter)
+Septentrio's RxTools is a Software which can be used to communicate to the mosaicHAT and can be downloaded free of charge from the [Septentrio support site](https://www.septentrio.com/en/products/gps-gnss-receiver-software/rxtools#resources). Once you have downloaded it you can use Septentrio's RxControl and Data Link which can communicate with the receiver over a COM-port connection: select Serial Connection option when opening the connection to the receiver.
 
-Default COM-port settings are:
+Note that currently there's no RxTools release for RPi (ARM architecture). Thus, RxTools should be used on a regular PC.
+
+#### FTDI-connector
+An extra serial port is made available and can be used as an FTDI. FTDI can also be used with some Bluetooth devices. There is a large variety of FTDI devices which can help in communicating with the mosaic G5 HAT.
+
+* The UART2 connection of the mosaic is exposed via pin header on the board. This can be usuable to connect an FTDI converter(eg. serial to Bluetooth or TLL to RS232 converter)
+
+<img src="/pictures/FTDI_TTL.png" width="50%">
+
+TTL to USB connection
+
+<img src="/pictures/TLL_connection.png" width="50%">
+
+Serial connection of mosaic G5 HAT could be tested using PuTTY
+
+Default COM-Port settings are:
 |Parameter     |Value         |
 |--------------|--------------|
 |baud rate     | 115200     |   
@@ -193,26 +208,9 @@ Default COM-port settings are:
 |stop bits | 1    |
 |flow control | none|
 
-The baudrate can be modified by using the **setCOMSettings** command
+<img src="/pictures/putty.png" width="50%">
 
-Serial connection between RPi and mosaic G5 HAT could be tested using PuTTY
-
-* Choose serial connection type **/dev/ttyS0**.
-* Write the right baudrate (**default: 115200**).
-* To send commands, force on local echo and local line editing from **Terminal** tab.
-*********insert picture
-
-#### RxTools
-
-Septentrio's RxTools is a SW which can be used to communicate to the mosaicHAT and can be downloaded free of charge from the [Septentrio support site](https://www.septentrio.com/en/products/gps-gnss-receiver-software/rxtools#resources). Once you have downloaded it you can use Septentrio's RxControl and Data Link which can communicate with the receiver over a COM-port connection: select Serial Connection option when opening the connection to the receiver.
-
-Note that currently there's no RxTools release for RPi (ARM architecture). Thus, RxTools should be used on a regular PC.
-
-#### FTDI-connector
-An extra serial port is made available and can be used as an FTDI. FTDI can also be used with some Bluetooth devices. There is a large variety of FTDI devices which can help in communicating with the mosaic G5 HAT.
-
-TTL to USB connection
-*****picture
+Can use comment ```sno, Stream1, COM2, GGA, sec1``` to output GGA data on the UART2
 
 #### LED indicators
 The follwing LEDs are defined on the mosaicHAT
