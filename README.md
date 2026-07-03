@@ -60,6 +60,8 @@ Septentrio's technology offers high accuracy and reliability thanks to advanced 
 For more information about Septentrio products go to [**https://www.septentrio.com/**](https://web.septentrio.com/GH-SSN-home).
 
 ### Deliverables
+This project provides the following deliverables for system integrators and hardware designers developing solutions based on Septentrio's mosaic-G5 modules.
+
 |Files         |Description   |
 |--------------|--------------|
 |  [mosaicG5_RPi_HAT.kicad_pro](./Kicad/mosaicG5%20HAT/mosaicG5_RPi_HAT.kicad_pro)   |KiCad project |
@@ -79,18 +81,27 @@ Open source here means:
 * May require attribution
 * Build on our work, push it further, and even make money doing it
 
-More info about licensing can be found here: 
+More info about licensing can be found here: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) and [open source](https://www.oshwa.org/definition/)
 
 ## Disclaimer
-This project is offered as-is. The main interfaces have been tested, but the design has not been fully checked or approved by the author or Septentrio. You are responsible for how you use it in your own projects. For guidance on working with Septentrio’s GNSS mosaic modules, we suggest reaching out to Septentrio directly.
+This project is **offered as-is**. The main interfaces have been tested, but the design has not been fully checked or approved by the author or Septentrio. You are responsible for how you use it in your own projects. For guidance on working with Septentrio’s GNSS mosaic modules, we suggest reaching out to Septentrio directly.
 
 Support website: https://www.septentrio.com/en/support
-### Documentation sections
-This project contains two important sections for documentation. The first one which is a user documentation; see section [mosaicG5 HAT user documentation](#mosaicg5-hat-user-documentationm) and the second one; see section [mosaicG5 HAT Design Documentation](#mosaicg5-hat-design-documentation) which is a documentation for designers who want to modify the reference design of this project.
+### Documentation Sections
+
+This project provides two main documentation sections:
+
+- **[mosaicG5 HAT User Documentation](#mosaicg5-hat-user-documentationm)**  
+  Contains information for users on how to install, configure, and use the mosaicG5 HAT.
+
+- **[mosaicG5 HAT Design Documentation](#mosaicg5-hat-design-documentation)**  
+  Intended for hardware designers who want to understand, customize, or modify the reference design of the mosaicG5 HAT.
 
 ## mosaicG5 HAT user documentation
-
 ### mosaicG5 HAT Manufacturing and Assembly
+
+This project includes all the files required to manufacture the mosaicG5 HAT, including the reference design, PCB layout, and Bill of Materials (BOM). You can use these files with your preferred PCB manufacturer. For this project, we used [JLCPCB](https://jlcpcb.com/) for both PCB fabrication and assembly due to their competitive pricing and fast production times.
+
 #### Elements to provide when manufacturing the board
 When you manufacture your board they will ask you for the following parts:
 
@@ -161,32 +172,46 @@ To communicate with UART1, use:
 
 ```/dev/serial0```
 
-#### connecting to antenna
+#### GNSS Antenna
 
-In order to benefit from the multiple signals and constellations that the mosaicG5 HAT board has it is recommended to purchase a capable multiband antenna. There are several GNSS antenna manufacturers in the market (e.g. Maxtenna, Tallysman, etc). For more information you can also contact Septentrio.
+## GNSS Antenna
 
-There are also different antenna types each suitable for different applications (e.g. robotics, larger machines, etc).Generally, the larger the antenna the better performance you might get, however it is not all about size but also the quality of the antenna elements.
+To take full advantage of the multi-band and multi-constellation capabilities of the mosaicG5 HAT, it is recommended to use a high-quality multi-band GNSS antenna.
+
+Several manufacturers offer suitable GNSS antennas, including Maxtena and Tallysman. You can also contact Septentrio for guidance on selecting an antenna that best fits your application.
+
+GNSS antennas are available in different form factors and performance levels, each designed for specific use cases such as robotics, precision agriculture, surveying, or industrial machinery. While larger antennas often provide better performance due to improved antenna design and larger ground planes, antenna quality and internal element design are equally important factors. Selecting the right antenna for your application will have a significant impact on positioning accuracy and reliability.
 
 For testing the board we used Tallysman antenna:
 
 <img src="/pictures/antenna.jpg" width="50%">
 
-Note: The VANT (Antenna voltage) pad of mosaic module is directly connected to the external +5V pin. The internal bias control circuit detects overcurrent
-conditions (>150mA) and protects the module in case of short circuit. According to mosaic hardware manual, VANT accepts 3V to 5.5V supply.
+**NOTE**: The VANT (Antenna voltage) pad of mosaic-G5 module is directly connected to the external +5V pin. The internal bias control circuit detects overcurrent
+conditions (>150mA) and protects the module in case of short circuit. According to mosaic-G5 hardware manual, VANT accepts 3V to 5.5V power supply.
 
-When using the external power supply, make sure it is not more than 5V. If more than 5V source is desired, make sure the two PWR jumpers are connected to 3V3 pin, or removed. Supplying higher voltages to VANT could DAMAGE the module.
+When using the external power supply, make sure it is not more than 5V. Supplying higher voltages to VANT could **DAMAGE** the module.
+
+#####Heading
+
+You can use mosaic-G5 P3H for heading but connecting the to antenna connectors. 
+
+RxTools can be used to monitor the heading.
+<img src="/pictures/Heading.png" width="50%">
 
 #### USB communication
+
+The mosaicG5 HAT via USB provides 2 USB serial ports that can be used with [Septentrio's RxTools](https://www.septentrio.com/en/products/gps-gnss-receiver-software/rxtools?__cf_chl_f_tk=9FZ303SoP8.kFwcI0yDpIdeAKHOC4U8.QrWtEdxvYuM-1783077901-1.0.1.1-mCYy7N0I0ynlIXaYiBgby9w0JgOXAPiThTtNe7ESnbY#resources).
+
+Septentrio's RxTools is a Software which can be used to communicate to the mosaic-G5 HAT and can be downloaded free of charge from the [Septentrio support site](https://www.septentrio.com/en/products/gps-gnss-receiver-software/rxtools#resources). Once you have downloaded it you can use Septentrio's RxControl and Data Link which can communicate with the receiver over a serial-port connection: select Serial Connection option when opening the connection to the receiver.
+
+<img src="/pictures/rxcontrol.png" width="50%">
+
+**NOTE:** That currently there's no RxTools release for RPi (ARM architecture). Thus, RxTools should be used on a regular PC.
+
 #### Serial communication
 A simple way to communicate with the mosaic-G5 receiver is to connect one of the UART, it offers 2 UARTs connections.
 
 * Both UART connections are  connected to the Raspberry-Pi for easie integration.
-
-#### RxTools
-
-Septentrio's RxTools is a Software which can be used to communicate to the mosaicHAT and can be downloaded free of charge from the [Septentrio support site](https://www.septentrio.com/en/products/gps-gnss-receiver-software/rxtools#resources). Once you have downloaded it you can use Septentrio's RxControl and Data Link which can communicate with the receiver over a COM-port connection: select Serial Connection option when opening the connection to the receiver.
-
-Note that currently there's no RxTools release for RPi (ARM architecture). Thus, RxTools should be used on a regular PC.
 
 #### FTDI-connector
 An extra serial port is made available and can be used as an FTDI. FTDI can also be used with some Bluetooth devices. There is a large variety of FTDI devices which can help in communicating with the mosaic G5 HAT.
@@ -277,10 +302,15 @@ Both PPS Output runs on 3.3V level. PPSO1 and PPSO2 are directly connected to an
 More information on the definition of PPS output or on how to configure the PPS parameters can be found in the mosaic-G5 reference guide. You can download this one from [Septentrio site](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P3H).
 
 #### Events
-EVENTs could be tested directly on mosaicG5 HAT board by connecting PPS Output to one of the EVENTs pins. Note that this works with a single wire because they share the same GND. Here PPSO_1 is connected to EVENTA, with PPS interval set to 1 sec.
+EVENTs could be tested directly on mosaicG5 HAT board by connecting PPS Output to one of the EVENTs pins. Note that this works with a single wire because they share the same GND. Here PPSO_1 is connected to EVENTB, with PPS interval set to 1 sec.
 
-To monitor Events you could use Rxcontrol, clicking on the expert console. once you have connected an output to the even pin you will see the data being recieved on the pin.
+<img src="/pictures/event.png" width="50%">
 
+To monitor Events you could use Rxcontrol, clicking on the expert console. once you have connected an output to the event pin you will see the data being recieved on the pin.
+
+**Note:** The **EVENT** inputs use **3.3 V logic levels**. Applying higher voltages may damage the receiver.
+
+For more information about the EVENT input functionality, see the **mosaic-G5 Reference Guide**, available from the [Septentrio website](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P3H).
 
 #### Python script
 
@@ -368,13 +398,13 @@ The mosaicG5 HAT was developed using [KiCad], an open-source Electronic Design A
 
 The schematic diagram is shown below. For improved readability and access to complete design details, refer to the PDF version of the [schematic].
 
-<img src="/pictures/" width="50%">
+<img src="/pictures/schematic.png" width="50%">
 
 The board layout without the copper pour. 
-<img src="/pictures/" width="50%">
+<img src="/pictures/PCB_no pour.png" width="50%">
 
 The board layout with the copper pour
-<img src="/pictures/" width="50%">
+<img src="/pictures/PCB pour.png" width="50%">
 
 Layout layer descriptions:
 
@@ -388,29 +418,24 @@ Layout layer descriptions:
 A top 3D view of the mosaicG5 HAT, featuring main electronic components.
 <img src="/pictures/" width="50%">
 
-### mosaic pinout
+### mosaic-G5 Pinout
 The Septentrio mosaic-G5 is the core of the mosaicG5 HAT board. It is a 22.8 x 16.4 mm compact GNSS module of 94 pins with a weight of 2.2 g. Complete information on mosaic-G5 connections can be found in the [Hardware Manual](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P3H).
 
-<img src="/pictures/" width="50%">
+<img src="/pictures/pinout.png" width="50%">
 
 The symbol, footprint and 3D model of mosaic-G5 can be found [here]()
-<img src="/pictures/" width="50%">
 
 ### power sources
 
 The mosaicG5 HAT has 3 options for powering the board; Raspberry Pi, USB-C and external power pin headers. The mosaic-G5 module itself runs on 3.3V, thus a buck converter(MP2145GD-Z) is used to regulate the voltage from 5V to 3.6V and an LDO voltage regulator is used to filter the switching noise from the buck converter and to regulate the voltage from 3.6 to 3.3volts(TPS7A9401DSCR). Raspberry Pi and USB-C already provide 5V.
 
-    **NOTE:**
-   When using the external power connector, only 5 V should be applied.
+ **NOTE:** When using the external power connector, only 5 V should be applied.
 
-    **WARNING:**
-    Applying voltages higher than 5 V to the external power input or higher than the specified voltage to **VANT** may damage the module
+ **WARNING:** Applying voltages higher than 5 V to the external power input or higher than the specified voltage to **VANT** may damage the module
 
 The ideal diodes (**XC8111AA01MR-G**) are used to ensure one-way current flow. Decoupling capacitors (1 µF) are used according to regulator’s datasheet. The following figure shows the power section of the schematic.
 
 <img src="pictures/power.png" width="60%">
-
-<img src="pictures/" width="60%">
 
 In the figure above:
 1. Buck converter(MP2145GD-Z).
@@ -419,18 +444,18 @@ In the figure above:
 4. External power source headers.
 5. Micro USB power source.
 
-### antennas 
+### Antennas 
 The mosaic-G5 P3H is a dual-antenna while the mosaic-G5 P3 is a single-antenna both of these modules are compatible with the PCB board however, when connecting the mosaic-G5 P3 you only connect the main antenna connector and leave the auxiliary unconnected. Both the antenna pins are not ESD-protected or biased in the schematics because all is done in the module. 
 
 The following figure shows the antenna section of the schematic.
 
 <img src="pictures/ANT schematics.png" width="40%">
 
-#### antenna connectors
+#### Antenna Connectors
 
 The PCB includes footprints for both SMA and U.FL antenna connectors. When assembling the PCB you can choose the type of connector you are going to choose. You do that by assembling one of the resistor to select either antenna connector.mosaicG5 HAT user can choose between 3.3V and 5V supply for the antenna voltage(VANT) using 2.00 mm header jumpers.
 
-#### First antenna
+#### First Antenna
 
 The first SMA antenna J10 is directly connected to a 0 ohm resistor and the first MMCX antenna J12 is also connected to a 0 ohm resistor and they are both connected to the main mosaic-G5 pin.
 The DC voltage of the main antenna connection is supplied from the mosaic-G5's VANT pin.
