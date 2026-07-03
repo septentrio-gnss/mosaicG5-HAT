@@ -117,8 +117,8 @@ The board exposes the following interfaces:
 
 ### Connecting to Raspberry Pi
 mosaicG5 HAT can be easily attached to Raspberry Pi as shown here:
-<img src="pictures/RPi_1.jpg" width="80%">
-<img src="pictures/RPi_2.jpg" width="80%">
+<img src="pictures/RPi1.jpg" width="80%">
+<img src="pictures/RPi2.jpg" width="80%">
 
 #### Preparing Raspberry Pi
 To enable communication between mosaicG5 HAT and Raspberry Pi (RPi), you should make sure required serial communication settings are configured.
