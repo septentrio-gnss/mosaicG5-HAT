@@ -400,10 +400,12 @@ The schematic diagram is shown below. For improved readability and access to com
 
 <img src="/pictures/schematic.png" width="50%">
 
-The board layout without the copper pour. 
+The board layout without the copper pour.
+ 
 <img src="/pictures/PCB_no pour.png" width="50%">
 
 The board layout with the copper pour
+
 <img src="/pictures/PCB pour.png" width="50%">
 
 Layout layer descriptions:
@@ -416,6 +418,7 @@ Layout layer descriptions:
 |Layer 4| Blue traces, copper pour connected to GND|
 
 A top 3D view of the mosaicG5 HAT, featuring main electronic components.
+
 <img src="/pictures/" width="50%">
 
 ### mosaic-G5 Pinout
