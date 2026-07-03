@@ -37,12 +37,12 @@ Different versions of the mosaic-G5 are available to suit various applications, 
 
 | Features     | [mosaic-G5 P1](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-g5-p1) | [mosaic-G5 P3](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P3) | [mosaic-G5 P3H](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P3H) |[mosaic-G5 P6](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P6) | [mosaic-G5 P8](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-g5-p8) |
 |--------------|--------------|--------------|---------------|---------------|---------------|
-| Functionality|High-precision positioning   |High-precision positioning |Positioning + Heading|
-| Use case     |Robotics (e.g robotic mowers), GIS devices |UAV, Commercial mowers, Industrial Robotics, Survey, Marine navigation |             
+| Functionality|High-precision positioning   |High-precision positioning |Positioning + Heading|Positioning + Heading | Positioning + Heading|
+| Use case     |Robotics (e.g robotic mowers), GIS devices |UAV, Commercial mowers, Industrial Robotics, Survey, Marine navigation | Autonomous vehicles, Marine navigation, Machine control, Survey | High-end autonomous systems, Robotics, Marine navigation, Survey, Machine control |            
 | GNSS bands   | Triple-band  | Quad-band    | Quad-band     |Quad-band |Quad-band  |
 | RTK support  | Yes          | Yes          | Yes           |Yes       |Yes        |
-| Dual antenna |              |              | Yes           |Yes       |Yes        |
-| Heading      |              |              | Yes           |Yes       |Yes        |
+| Dual antenna |    No        |  No          | Yes           |Yes       |Yes        |
+| Heading      |     NO       |   No         | Yes           |Yes       |Yes        |
 
 
 
@@ -58,13 +58,13 @@ For more information about Septentrio products go to [**https://www.septentrio.c
 ### Deliverables
 |Files         |Description   |
 |--------------|--------------|
-|     |KiCad project |
-|    | KiCad layout |
-|    |KiCad schematic |
+|  [mosaicG5_RPi_HAT.kicad_pro](./Kicad/mosaicG5%20HAT/mosaicG5_RPi_HAT.kicad_pro)   |KiCad project |
+| [mosaicG5_RPi_HAT.kicad_pcb](./Kicad/mosaicG5%20HAT/mosaicG5_RPi_HAT.kicad_pcb) | KiCad layout |
+|  [mosaicG5_RPi_HAT.kicad_sch](./Kicad/mosaicG5%20HAT/mosaicG5_RPi_HAT.kicad_sch)  |KiCad schematic |
 |    | Project schematic library |
 |    |mosaic symbol |
 |    |mosaic footprint |
-|     | mosaicG5 HAT Bill of Materials |
+|    | mosaicG5 HAT Bill of Materials |
 ### Is the project open-source?
 Yes, We made this open source so you can tinker, adapt, and create. If you are building your own robotics project, a spin-off device, or integrating GNSS into a larger system, this is a great starting point.
 
@@ -106,7 +106,8 @@ You can order the mosaic-G5 from Digi-Key, or you can contact Septentrio at www.
 | mosaic-G5 P1 |[Septentrio_G5-P1](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-g5-p1) | - |
 | mosaic-G5 P3 | [Septentrio_G5-P3](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P3) | [410501](https://www.digikey.com/en/products/detail/septentrio-inc/410501/28527327) |
 | mosaic-G5 P3H |[Septentrio_G5-P3H](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P3H) | [410502](https://www.digikey.com/en/products/detail/septentrio-inc/410502/28527213) |
-
+| mosaic-G5 P6 |[Septentrio_G5-P6](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P6) | [410503]() |
+| mosaic-G5 P8 |[Septentrio_G5-P8](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-g5-p8) | [410610]() |
 
 ### General interfaces of mosaicHAT
 The board exposes the following interfaces:
@@ -118,23 +119,6 @@ The board exposes the following interfaces:
 mosaicG5 HAT can be easily attached to Raspberry Pi as shown here:
 <img src="pictures/RPi_1.jpg" width="80%">
 <img src="pictures/RPi_2.jpg" width="80%">
-
-If the direct header connections were expanded for illustration, they will look like:
-
-Power connections:
-
-***insert picture
-|Wires  |Type   |
-|-------|-------|
-|Red    | +5V   |
-|Black  | GND   |
-
-Communication connections:
-|Wires  |Type   |
-|-------|-------|
-|Blue   |Serial UART   |
-|Orange |General LED's |
-|Purple |Reset |
 
 #### Preparing Raspberry Pi
 To enable communication between mosaicG5 HAT and Raspberry Pi (RPi), you should make sure required serial communication settings are configured.
