@@ -20,6 +20,10 @@ The board can also operate as a standalone device when powered through its USB c
 ### A HAT for Raspberry Pi?
 HAT stands for *Hardware Attached on Top*. It is a type of add-on board specifically designed to sit on top of a Raspberry Pi and connect directly to its 40-pin GPIO header. HATs follow certain standards so they fit neatly, communicate properly, and are powered safely from the Pi.
 
+#### Robust Mechanical Design
+
+Four dedicated mounting holes provide a secure and rigid connection between the Raspberry Pi and the add-on board.
+
 ### Can I buy it?
 
 #### Produce yourself
@@ -38,7 +42,7 @@ Different versions of the mosaic-G5 are available to suit various applications, 
 | Features     | [mosaic-G5 P1](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-g5-p1) | [mosaic-G5 P3](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P3) | [mosaic-G5 P3H](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P3H) |[mosaic-G5 P6](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P6) | [mosaic-G5 P8](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-g5-p8) |
 |--------------|--------------|--------------|---------------|---------------|---------------|
 | Functionality|High-precision positioning   |High-precision positioning |Positioning + Heading|Positioning + Heading | Positioning + Heading|
-| Use case     |Robotics (e.g robotic mowers), GIS devices |UAV, Commercial mowers, Industrial Robotics, Survey, Marine navigation | Autonomous vehicles, Marine navigation, Machine control, Survey | High-end autonomous systems, Robotics, Marine navigation, Survey, Machine control |            
+| Use case     |Robotics (e.g robotic mowers), GIS devices |UAV, Commercial mowers, Industrial Robotics, Survey, Marine navigation | Autonomous vehicles, Marine navigation, Machine control, Survey | High-end autonomous systems, Robotics, Marine navigation, Survey, Machine control | High-end autonomous systems, Robotics, Marine navigation, Survey, Machine control |          
 | GNSS bands   | Triple-band  | Quad-band    | Quad-band     |Quad-band |Quad-band  |
 | RTK support  | Yes          | Yes          | Yes           |Yes       |Yes        |
 | Dual antenna |    No        |  No          | Yes           |Yes       |Yes        |
@@ -117,8 +121,9 @@ The board exposes the following interfaces:
 
 ### Connecting to Raspberry Pi
 mosaicG5 HAT can be easily attached to Raspberry Pi as shown here:
-<img src="pictures/RPi1.jpg" width="80%">
-<img src="pictures/RPi2.jpg" width="80%">
+
+<img src="pictures/RPi1.jpg" width="60%">
+<img src="pictures/RPi2.jpg" width="60%">
 
 #### Preparing Raspberry Pi
 To enable communication between mosaicG5 HAT and Raspberry Pi (RPi), you should make sure required serial communication settings are configured.
@@ -162,12 +167,9 @@ In order to benefit from the multiple signals and constellations that the mosaic
 
 There are also different antenna types each suitable for different applications (e.g. robotics, larger machines, etc).Generally, the larger the antenna the better performance you might get, however it is not all about size but also the quality of the antenna elements.
 
-For testing the board we used Tallysman antenna 
-You can purchase it at:
+For testing the board we used Tallysman antenna:
 
-
-
-|antenna  |[link]()   |
+<img src="/pictures/antenna.jpg" width="50%">
 
 Note: The VANT (Antenna voltage) pad of mosaic module is directly connected to the external +5V pin. The internal bias control circuit detects overcurrent
 conditions (>150mA) and protects the module in case of short circuit. According to mosaic hardware manual, VANT accepts 3V to 5.5V supply.
