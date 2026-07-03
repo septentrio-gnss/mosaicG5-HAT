@@ -191,11 +191,12 @@ conditions (>150mA) and protects the module in case of short circuit. According 
 
 When using the external power supply, make sure it is not more than 5V. Supplying higher voltages to VANT could **DAMAGE** the module.
 
-#####Heading
+##### Heading
 
 You can use mosaic-G5 P3H for heading but connecting the to antenna connectors. 
 
 RxTools can be used to monitor the heading.
+
 <img src="/pictures/Heading.png" width="50%">
 
 #### USB communication
@@ -401,7 +402,7 @@ The schematic diagram is shown below. For improved readability and access to com
 <img src="/pictures/schematic.png" width="50%">
 
 The board layout without the copper pour.
- 
+
 <img src="/pictures/PCB_no pour.png" width="50%">
 
 The board layout with the copper pour
