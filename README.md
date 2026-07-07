@@ -133,8 +133,8 @@ The board exposes the following interfaces:
 ### Connecting to Raspberry Pi
 mosaicG5 HAT can be easily attached to Raspberry Pi as shown here:
 
-<img src="pictures/RPi1.jpg" width="60%">
-<img src="pictures/RPi2.jpg" width="60%">
+<img src="pictures/RPi1.jpg" width="40%">
+<img src="pictures/RPi2.jpg" width="40%">
 
 #### Preparing Raspberry Pi
 To enable communication between mosaicG5 HAT and Raspberry Pi (RPi), you should make sure required serial communication settings are configured.
@@ -184,7 +184,7 @@ GNSS antennas are available in different form factors and performance levels, ea
 
 For testing the board we used Tallysman antenna:
 
-<img src="/pictures/antenna.jpg" width="50%">
+<img src="/pictures/antenna.jpg" width="30%">
 
 **NOTE**: The VANT (Antenna voltage) pad of mosaic-G5 module is directly connected to the external +5V pin. The internal bias control circuit detects overcurrent
 conditions (>150mA) and protects the module in case of short circuit. According to mosaic-G5 hardware manual, VANT accepts 3V to 5.5V power supply.
