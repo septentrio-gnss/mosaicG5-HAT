@@ -162,7 +162,7 @@ For the PCB only:
 
 For assembly:
 
-* Bill of Materials (BOM), the list of components used in the project with their reference designators. For this project check [BOM]().
+* Bill of Materials (BOM), the list of components used in the project with their reference designators. For this project check [BOM](./BOM.xlsx).
 * Component Placement List (CPL), this file contains the exact position of each component on the board (X,Y and rotation). CPL is exported from KiCad however, you need to check with the manufacturer services to ensure the right placement for components.
 
 #### Ordering mosaic module
@@ -243,37 +243,49 @@ conditions (>150mA) and protects the module in case of short circuit. According 
 
 When using the external power supply, make sure it is not more than 5V. Supplying higher voltages to VANT could **DAMAGE** the module.
 
-##### Dual/Single Mode
+##### Single/Dual Antenna Mode
 
-If you want to use the module in:
-* Single mode run:
+The receiver can operate in either **single-antenna** or **dual-antenna** mode. Changing the frontend mode only takes effect after a reboot.
 
-  ``` setFrontendMode, SingleAnt ```
+**Single-antenna mode**
 
-  to configure the module in single-antenna mode at the next reboot
+Run:
 
-  ```exeCopyConfigFile, Current, Boot```
+```
+setFrontendMode, SingleAnt
+```
+to configure the receiver for single-antenna mode at the next reboot.
 
-  to save the configuration in the boot configuration file
+Then save the configuration:
 
-  ```exeResetReceiver, Hard, none```
+```
+exeCopyConfigFile, Current, Boot
+```
 
-  to reboot
+Finally, reboot the receiver:
 
-* Dual mode run:
+```
+exeResetReceiver, Hard, none
+```
 
-  ```setFrontendMode, DualAnt```
+**Dual-antenna mode**
+Run:
 
-  to configure the module in dual-antenna mode at the next reboot
+```
+setFrontendMode, DualAnt
+```
+to configure the receiver for dual-antenna mode at the next reboot.
 
-  ```exeCopyConfigFile, Current, Boot```
+Then save the configuration:
 
-  to save the configuration in the boot configuration file
+```
+exeCopyConfigFile, Current, Boot
+```
+Finally, reboot the receiver:
 
-  ```exeResetReceiver, Hard, none```
-
-  to reboot
-
+```
+exeResetReceiver, Hard, none
+```
 P3H, P6 and P8 can run both in single or dual mode deppending on how you configure it. connect both the antenner connectors when using dual mode. 
 
 ##### Heading
@@ -377,20 +389,27 @@ To reset module, a LOW pulse, not shorter than 1 microsecond, should be driven t
 
 PPS signals are used for precise timekeeping and time measurement. One increasingly common use is in time synchronization with other sensors (e.g. Lidars or IMUs).
 
-The receiver is able to generate an x-pulse-per-second (xPPS) signal aligned with either GPS, Galileo or GLONASS system time, or with UTC, or with the internal receiver time (RxClock). 
+The receiver is able to generate an x-pulse-per-second (xPPS) signal aligned with GPS, Galileo, GLONASS system time, UTC, or with the internal receiver time (RxClock). 
 
 Polarity, frequency and pulse width of PPSO could be configured by **setPPSParameters** command.
 
 <img src="/pictures/Eve&PPSO.png" width="50%">
 
-Both PPS Output runs on 3.3V level. PPSO1 and PPSO2 are directly connected to an indicator LED. 
+By default, **PPSO2 is disabled**. It can be enabled and configured in **RxControl**:.
+
+<img src="/pictures/PPS2.PNG" width="50%">
+<img src="/pictures/PPS2_.png" width="40%">
+
+
+Both PPS Output operate at 3.3 V logic levels. PPSO1 and PPSO2 are directly connected to an indicator LED. 
 
 More information on the definition of PPS output or on how to configure the PPS parameters can be found in the mosaic-G5 reference guide. You can download this one from [Septentrio site](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P3H).
 
 #### Events
 EVENTs could be tested directly on mosaicG5 HAT board by connecting PPS Output to one of the EVENTs pins. Note that this works with a single wire because they share the same GND. Here PPSO_1 is connected to EVENTB, with PPS interval set to 1 sec.
 
-<img src="/pictures/event.png" width="50%">
+<img src="/pictures/event_console.png" width="40%">
+<img src="/pictures/event.png" width="30%">
 
 To monitor Events you could use Rxcontrol, clicking on the expert console. once you have connected an output to the event pin you will see the data being recieved on the pin.
 
@@ -512,7 +531,7 @@ The Septentrio mosaic-G5 is the core of the mosaicG5 HAT board. It is a 22.8 x 1
 
 <img src="/pictures/pinout.png" width="50%">
 
-The symbol, footprint and 3D model of mosaic-G5 can be found [here]()
+The symbol, footprint and 3D model of mosaic-G5 can be found [here](https://app.ultralibrarian.com/details/536b89de-4b22-11f0-b69d-024899f9dfe1/Septentrio/MOSAIC-G5-P3)
 
 ### power sources
 
