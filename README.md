@@ -3,12 +3,64 @@
 |mosaicG5 HAT| A GNSS HAT fOr Raspberry Pi|
 |------|-------|
 |Author|  [laekaz](https://github.com/laekaz)|
-|Maintainer| [(Septentrio gnss github user)](githubuser@septentrio.com)|
+|Maintainer| [Septentrio gnss github user](githubuser@septentrio.com)|
 |external website| https://github.com/septentrio-gnss/mosaicG5-HAT  |
 |License| [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) and [open source](https://www.oshwa.org/definition/) |
 |Avalable to purchase here:| |
 
 ## Table of Content
+
+* [Introduction to mosaicG5 HAT](#introduction-to-mosaicg5-hat)
+  * [What is the mosaicG5 HAT?](#what-is-the-mosaicg5-hat)
+  * [A HAT for Raspberry Pi?](#a-hat-for-raspberry-pi)
+    * [Robust Mechanical Design](#robust-mechanical-design)
+  * [Can I buy it?](#can-i-buy-it)
+    * [Produce yourself](#produce-yourself)
+    * [Do I need to source special components for producing this board?](#do-i-need-to-source-special-components-for-producing-this-board)
+  * [What is a mosaic-G5 module?](#what-is-a-mosaic-g5-module)
+    * [Other mosaic-G5 versions](#other-mosaic-g5-versions)
+  * [Who is Septentrio?](#who-is-septentrio)
+  * [Deliverables](#deliverables)
+  * [Is the project open-source?](#is-the-project-open-source)
+
+* [Disclaimer](#disclaimer)
+
+* [Documentation Sections](#documentation-sections)
+
+* [mosaicG5 HAT User Documentation](#mosaicg5-hat-user-documentation)
+  * [mosaicG5 HAT Manufacturing and Assembly](#mosaicg5-hat-manufacturing-and-assembly)
+    * [Elements to provide when manufacturing the board](#elements-to-provide-when-manufacturing-the-board)
+    * [Ordering mosaic module](#ordering-mosaic-module)
+  * [General Interfaces of mosaicHAT](#general-interfaces-of-mosaichat)
+  * [Connecting to Raspberry Pi](#connecting-to-raspberry-pi)
+    * [Preparing Raspberry Pi](#preparing-raspberry-pi)
+  * [GNSS Antenna](#gnss-antenna)
+    * [Heading](#heading)
+  * [USB Communication](#usb-communication)
+  * [Serial Communication](#serial-communication)
+  * [FTDI Connector](#ftdi-connector)
+  * [LED Indicators](#led-indicators)
+  * [Reset mosaic-G5](#reset-mosaic-g5)
+  * [PPS Output](#pps-output)
+  * [Events](#events)
+  * [Python Script](#python-script)
+
+* [mosaicG5 HAT Design Documentation](#mosaicg5-hat-design-documentation)
+  * [Design Overview](#design-overview)
+  * [mosaic-G5 Pinout](#mosaic-g5-pinout)
+  * [Power Sources](#power-sources)
+  * [Antennas](#antennas)
+    * [Antenna Connectors](#antenna-connectors)
+    * [First Antenna](#first-antenna)
+    * [Second Antenna](#second-antenna)
+  * [Raspberry Pi Serial](#raspberry-pi-serial)
+  * [Reset Input](#reset-input)
+  * [USB-C](#usb-c)
+  * [Events and PPSO](#events-and-ppso)
+  * [FTDI](#ftdi)
+  * [LEDs](#leds)
+  * [Clock Frequency Reference](#clock-frequency-reference)
+  * [Further Improvements](#further-improvements)
 
 ## Introduction to mosaicG5 HAT
 ### What is the mosaicG5 HAT?
@@ -190,6 +242,39 @@ For testing the board we used Tallysman antenna:
 conditions (>150mA) and protects the module in case of short circuit. According to mosaic-G5 hardware manual, VANT accepts 3V to 5.5V power supply.
 
 When using the external power supply, make sure it is not more than 5V. Supplying higher voltages to VANT could **DAMAGE** the module.
+
+##### Dual/Single Mode
+
+If you want to use the module in:
+* Single mode run:
+
+  ``` setFrontendMode, SingleAnt ```
+
+  to configure the module in single-antenna mode at the next reboot
+
+  ```exeCopyConfigFile, Current, Boot```
+
+  to save the configuration in the boot configuration file
+
+  ```exeResetReceiver, Hard, none```
+
+  to reboot
+
+* Dual mode run:
+
+  ```setFrontendMode, DualAnt```
+
+  to configure the module in dual-antenna mode at the next reboot
+
+  ```exeCopyConfigFile, Current, Boot```
+
+  to save the configuration in the boot configuration file
+
+  ```exeResetReceiver, Hard, none```
+
+  to reboot
+
+P3H, P6 and P8 can run both in single or dual mode deppending on how you configure it. connect both the antenner connectors when using dual mode. 
 
 ##### Heading
 
