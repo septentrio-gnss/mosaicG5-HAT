@@ -122,7 +122,7 @@ This project provides the following deliverables for system integrators and hard
 |    | Project schematic library |
 |    |mosaic symbol |
 |    |mosaic footprint |
-|    | mosaicG5 HAT Bill of Materials |
+|[BOM](./BOM.xlsx)    | mosaicG5 HAT Bill of Materials |
 ### Is the project open-source?
 Yes, We made this open source so you can tinker, adapt, and create. If you are building your own robotics project, a spin-off device, or integrating GNSS into a larger system, this is a great starting point.
 
