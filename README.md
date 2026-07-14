@@ -398,7 +398,7 @@ Polarity, frequency and pulse width of PPSO could be configured by **setPPSParam
 By default, **PPSO2 is disabled**. It can be enabled and configured in **RxControl**:.
 
 <img src="/pictures/PPS2.PNG" width="50%">
-<img src="/pictures/PPS2_.png" width="40%">
+<img src="/pictures/PPS2_.png" width="25%">
 
 
 Both PPS Output operate at 3.3 V logic levels. PPSO1 and PPSO2 are directly connected to an indicator LED. 
@@ -524,7 +524,7 @@ Layout layer descriptions:
 
 A top 3D view of the mosaicG5 HAT, featuring main electronic components.
 
-<img src="/pictures/" width="50%">
+<img src="/pictures/3d view.png" width="50%">
 
 ### mosaic-G5 Pinout
 The Septentrio mosaic-G5 is the core of the mosaicG5 HAT board. It is a 22.8 x 16.4 mm compact GNSS module of 94 pins with a weight of 2.2 g. Complete information on mosaic-G5 connections can be found in the [Hardware Manual](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P3H).
