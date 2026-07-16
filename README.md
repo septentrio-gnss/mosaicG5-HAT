@@ -25,43 +25,6 @@
 
 * [Disclaimer](#disclaimer)
 
-* [Documentation Sections](#documentation-sections)
-
-* [mosaicG5 HAT User Documentation](#mosaicg5-hat-user-documentation)
-  * [mosaicG5 HAT Manufacturing and Assembly](#mosaicg5-hat-manufacturing-and-assembly)
-    * [Elements to provide when manufacturing the board](#elements-to-provide-when-manufacturing-the-board)
-    * [Ordering mosaic module](#ordering-mosaic-module)
-  * [General Interfaces of mosaicHAT](#general-interfaces-of-mosaichat)
-  * [Connecting to Raspberry Pi](#connecting-to-raspberry-pi)
-    * [Preparing Raspberry Pi](#preparing-raspberry-pi)
-  * [GNSS Antenna](#gnss-antenna)
-    * [Heading](#heading)
-  * [USB Communication](#usb-communication)
-  * [Serial Communication](#serial-communication)
-  * [FTDI Connector](#ftdi-connector)
-  * [LED Indicators](#led-indicators)
-  * [Reset mosaic-G5](#reset-mosaic-g5)
-  * [PPS Output](#pps-output)
-  * [Events](#events)
-  * [Python Script](#python-script)
-
-* [mosaicG5 HAT Design Documentation](#mosaicg5-hat-design-documentation)
-  * [Design Overview](#design-overview)
-  * [mosaic-G5 Pinout](#mosaic-g5-pinout)
-  * [Power Sources](#power-sources)
-  * [Antennas](#antennas)
-    * [Antenna Connectors](#antenna-connectors)
-    * [First Antenna](#first-antenna)
-    * [Second Antenna](#second-antenna)
-  * [Raspberry Pi Serial](#raspberry-pi-serial)
-  * [Reset Input](#reset-input)
-  * [USB-C](#usb-c)
-  * [Events and PPSO](#events-and-ppso)
-  * [FTDI](#ftdi)
-  * [LEDs](#leds)
-  * [Clock Frequency Reference](#clock-frequency-reference)
-  * [Further Improvements](#further-improvements)
-
 ## Introduction to mosaicG5 HAT
 ### What is the mosaicG5 HAT?
 The mosaicG5 HAT is an add-on board that brings high-precision GNSS (GPS) which integrates [mosaic-G5](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules) Septentrio's GNSS module with basic communications, allowing the system to receive signals from multiple GNSS constellations, such as GPS, Galileo, GLONASS, and BeiDo. 
