@@ -158,7 +158,7 @@ P3H, P6 and P8 can run both in single or dual mode deppending on how you configu
 
 #### Heading
 
-You can use mosaic-G5 P3H for heading but connecting the to antenna connectors. 
+You can use mosaic-G5 P3H for heading but **it's necessary to connect the two antenna connectors.** 
 
 RxTools can be used to monitor the heading.
 

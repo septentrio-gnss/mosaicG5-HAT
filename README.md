@@ -42,7 +42,7 @@ Four dedicated mounting holes provide a secure and rigid connection between the 
 ### Can I buy it?
 
 #### Produce yourself
-You can use the design files, Bill of Materials from this project and contact your manufacturing company for production. In this project we used JLCPCB for producing the PCB and assembling it. We used JLCPCB for PCB fabrication and assembly because of its competitive pricing and component availability.
+You can use the design files, Bill of Materials from this project and contact your manufacturing company for production. In this project we used JLCPCB for producing the PCB and assembling it. We used JLCPCB because of its competitive pricing and component availability.
 
 ##### Do I need to source special components for producing this board?
 
