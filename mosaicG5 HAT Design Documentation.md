@@ -27,9 +27,9 @@ The mosaicG5 HAT is a four-layer Printed Circuit Board (PCB) designed to mount d
 
 With the exception of the Raspberry Pi female header connector, all components are mounted on the top side of the board. The design uses Surface-Mount Devices (SMDs) throughout, except for the external connectors.
 
-The mosaicG5 HAT was developed using [KiCad], an open-source Electronic Design Automation (EDA) suite. In addition to its schematic capture and PCB layout capabilities, KiCad includes an integrated 3D viewer that provides a realistic representation of the assembled board.
+The mosaicG5 HAT was developed using [KiCad](https://www.kicad.org/download/), an open-source Electronic Design Automation (EDA) suite. In addition to its schematic capture and PCB layout capabilities, KiCad includes an integrated 3D viewer that provides a realistic representation of the assembled board.
 
-The schematic diagram is shown below. For improved readability and access to complete design details, refer to the PDF version of the [schematic].
+The schematic diagram is shown below. For improved readability and access to complete design details, refer to the PDF version of the [schematic](/Kicad/mosaicG5%20HAT/mosaicG5_RPi_HAT.kicad_sch).
 
 <img src="/pictures/schematic.png" width="50%">
 
@@ -63,13 +63,13 @@ The symbol, footprint and 3D model of mosaic-G5 can be found [here](https://app.
 
 ## power sources
 
-The mosaicG5 HAT has 3 options for powering the board; Raspberry Pi, USB-C and external power pin headers. The mosaic-G5 module itself runs on 3.3V, thus a buck converter(MP2145GD-Z) is used to regulate the voltage from 5V to 3.6V and an LDO voltage regulator is used to filter the switching noise from the buck converter and to regulate the voltage from 3.6 to 3.3volts(TPS7A9401DSCR). Raspberry Pi and USB-C already provide 5V.
+The mosaicG5 HAT has 3 options for powering the board; Raspberry Pi, USB-C and external power pin headers. The mosaic-G5 module itself runs on 3.3V, thus a buck converter(MP2145GD-Z) is used to regulate the voltage from 5V to 3.6V and an LDO voltage regulator is used to filter the switching noise from the buck converter and to regulate the voltage from 3.7 to 3.3volts(TPS7A9401DSCR). Raspberry Pi and USB-C already provide 5V.
 
  **NOTE:** When using the external power connector, only 5 V should be applied.
 
  **WARNING:** Applying voltages higher than 5 V to the external power input or higher than the specified voltage to **VANT** may damage the module
 
-The ideal diodes (**XC8111AA01MR-G**) are used to ensure one-way current flow. Decoupling capacitors (1 µF) are used according to regulator’s datasheet. The following figure shows the power section of the schematic.
+The ideal diodes (**XC8111AA01MR-G**) are used to ensure one-way current flow. Decoupling capacitors (1 µF) are used according to the datasheet. The following figure shows the power section of the schematic.
 
 <img src="pictures/power.png" width="60%">
 
@@ -81,7 +81,7 @@ In the figure above:
 5. Micro USB power source.
 
 ## Antennas 
-The mosaic-G5 P3H is a dual-antenna while the mosaic-G5 P3 is a single-antenna both of these modules are compatible with the PCB board however, when connecting the mosaic-G5 P3 you only connect the main antenna connector and leave the auxiliary unconnected. Both the antenna pins are not ESD-protected or biased in the schematics because all is done in the module. 
+The mosaic-G5 P3H is a dual-antenna while the mosaic-G5 P3 is a single-antenna both of these modules are compatible with the PCB board however, when connecting the mosaic-G5 P3 you only connect the main antenna connector and leave the auxiliary unconnected. Both the antenna pins are not ESD-protected or biased in the schematics because all is done inside the module. 
 
 The following figure shows the antenna section of the schematic.
 
