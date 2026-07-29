@@ -104,7 +104,7 @@ GNSS antennas are available in different form factors and performance levels, ea
 
 For testing the board we used Tallysman antenna:
 
-<img src="/pictures/antenna.jpg" width="30%">
+<img src="pictures/antenna.jpg" width="30%">
 
 **NOTE**: The VANT (Antenna voltage) pad of mosaic-G5 module is directly connected to the external +5V pin. The internal bias control circuit detects overcurrent
 conditions (>150mA) and protects the module in case of short circuit. According to mosaic-G5 hardware manual, VANT accepts 3V to 5.5V power supply.
@@ -162,7 +162,7 @@ You can use mosaic-G5 P3H for heading but **it's necessary to connect the two an
 
 RxTools can be used to monitor the heading.
 
-<img src="/pictures/Heading.png" width="50%">
+<img src="pictures/Heading.png" width="50%">
 
 ### USB communication
 
@@ -170,7 +170,7 @@ The mosaicG5 HAT via USB provides 2 USB serial ports that can be used with [Sept
 
 Septentrio's RxTools is a Software which can be used to communicate to the mosaic-G5 HAT and can be downloaded free of charge from the [Septentrio support site](https://www.septentrio.com/en/products/gps-gnss-receiver-software/rxtools#resources). Once you have downloaded it you can use Septentrio's RxControl and Data Link which can communicate with the receiver over a serial-port connection: select Serial Connection option when opening the connection to the receiver.
 
-<img src="/pictures/rxcontrol.png" width="50%">
+<img src="pictures/rxcontrol.png" width="50%">
 
 **NOTE:** That currently there's no RxTools release for RPi (ARM architecture). Thus, RxTools should be used on a regular PC.
 
@@ -184,11 +184,11 @@ An extra serial port is made available and can be used as an FTDI. FTDI can also
 
 * The UART2 connection of the mosaic is exposed via pin header on the board. This can be usuable to connect an FTDI converter(eg. serial to Bluetooth or TLL to RS232 converter)
 
-<img src="/pictures/FTDI_TTL.png" width="50%">
+<img src="pictures/FTDI_TTL.png" width="50%">
 
 TTL to USB connection
 
-<img src="/pictures/TLL_connection.png" width="50%">
+<img src="pictures/TLL_connection.png" width="50%">
 
 Serial connection of mosaic G5 HAT could be tested using PuTTY
 
@@ -201,7 +201,7 @@ Default COM-Port settings are:
 |stop bits | 1    |
 |flow control | none|
 
-<img src="/pictures/putty.png" width="50%">
+<img src="pictures/putty.png" width="50%">
 
 Can use comment ```sno, Stream1, COM2, GGA, sec1``` to output GGA data on the UART2
 
@@ -216,7 +216,7 @@ The follwing LEDs are defined on the mosaicHAT
 |PPS2 | Pulse Per Second  |
 |PPS1 | Pulse Per Second  |
 
-<img src="/pictures/LED_indicators.png" width="50%">
+<img src="pictures/LED_indicators.png" width="50%">
 
 PPSO clock could be tuned using **setPPSParameters** command. While GPLEDs default mode is PVTLED, it could be configured to work in different modes (PVTLED, DIFFCORLED and TRACKLED) using setLEDMode command. Refer to the Hardware Manual for blinking behaviour of each mode. Both General Purpose LEDs (GL1 and GL2) could be directly controlled by Raspberry Pi GPIO.
 
@@ -261,12 +261,12 @@ The receiver is able to generate an x-pulse-per-second (xPPS) signal aligned wit
 
 Polarity, frequency and pulse width of PPSO could be configured by **setPPSParameters** command.
 
-<img src="/pictures/Eve&PPSO.png" width="50%">
+<img src="pictures/Eve&PPSO.png" width="50%">
 
 By default, **PPSO2 is disabled**. It can be enabled and configured in **RxControl**:.
 
-<img src="/pictures/PPS2.PNG" width="50%">
-<img src="/pictures/PPS2_.png" width="25%">
+<img src="pictures/PPS2.PNG" width="50%">
+<img src="pictures/PPS2_.png" width="25%">
 
 
 Both PPS Output operate at 3.3 V logic levels. PPSO1 and PPSO2 are directly connected to an indicator LED. 
@@ -276,8 +276,8 @@ More information on the definition of PPS output or on how to configure the PPS 
 ### Events
 EVENTs could be tested directly on mosaicG5 HAT board by connecting PPS Output to one of the EVENTs pins. Note that this works with a single wire because they share the same GND. Here PPSO_1 is connected to EVENTB, with PPS interval set to 1 sec.
 
-<img src="/pictures/event_console.png" width="40%">
-<img src="/pictures/event.png" width="30%">
+<img src="pictures/event_console.png" width="40%">
+<img src="pictures/event.png" width="30%">
 
 To monitor Events you could use Rxcontrol, clicking on the expert console. once you have connected an output to the event pin you will see the data being recieved on the pin.
 

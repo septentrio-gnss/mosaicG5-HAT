@@ -31,15 +31,15 @@ The mosaicG5 HAT was developed using [KiCad](https://www.kicad.org/download/), a
 
 The schematic diagram is shown below. For improved readability and access to complete design details, refer to the PDF version of the [schematic](/Kicad/mosaicG5%20HAT/mosaicG5_RPi_HAT.kicad_sch).
 
-<img src="/pictures/schematic.png" width="50%">
+<img src="pictures/schematic.png" width="50%">
 
 The board layout without the copper pour.
 
-<img src="/pictures/PCB_no pour.png" width="50%">
+<img src="pictures/PCB_no pour.png" width="50%">
 
 The board layout with the copper pour
 
-<img src="/pictures/PCB pour.png" width="50%">
+<img src="pictures/PCB pour.png" width="50%">
 
 Layout layer descriptions:
 
@@ -52,12 +52,12 @@ Layout layer descriptions:
 
 A top 3D view of the mosaicG5 HAT, featuring main electronic components.
 
-<img src="/pictures/3d view.png" width="80%">
+<img src="pictures/3d view.png" width="80%">
 
 ## mosaic-G5 Pinout
 The Septentrio mosaic-G5 is the core of the mosaicG5 HAT board. It is a 22.8 x 16.4 mm compact GNSS module of 94 pins with a weight of 2.2 g. Complete information on mosaic-G5 connections can be found in the [Hardware Manual](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P3H).
 
-<img src="/pictures/pinout.png" width="50%">
+<img src="pictures/pinout.png" width="50%">
 
 The symbol, footprint and 3D model of mosaic-G5 can be found [here](https://app.ultralibrarian.com/details/536b89de-4b22-11f0-b69d-024899f9dfe1/Septentrio/MOSAIC-G5-P3)
 
@@ -146,9 +146,6 @@ The following figure hights USB parts highlighted. GND vias were stitched around
 * Common mode filter.
 * USB D+/D- lines.
 * VBUS.
-
-## Events and PPSO
-
 
 ## FTDI
 Second serial interface to mosaic-G5 (UART2) is exposed through 2.54 mm pin headers. The FTDI connection allows communication with other devices through serial (e.g. HC-06 Bluetooth module).
