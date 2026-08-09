@@ -14,8 +14,7 @@
   * [What is the mosaicG5 HAT?](#what-is-the-mosaicg5-hat)
   * [A HAT for Raspberry Pi?](#a-hat-for-raspberry-pi)
     * [Robust Mechanical Design](#robust-mechanical-design)
-  * [Can I buy it?](#can-i-buy-it)
-    * [Produce yourself](#produce-yourself)
+   * [Produce yourself?](#produce-yourself)
     * [Do I need to source special components for producing this board?](#do-i-need-to-source-special-components-for-producing-this-board)
   * [What is a mosaic-G5 module?](#what-is-a-mosaic-g5-module)
     * [Other mosaic-G5 versions](#other-mosaic-g5-versions)
@@ -39,9 +38,8 @@ HAT stands for *Hardware Attached on Top*. It is a type of add-on board specific
 
 Four dedicated mounting holes provide a secure and rigid connection between the Raspberry Pi and the add-on board.
 
-### Can I buy it?
 
-#### Produce yourself
+### Produce yourself?
 You can use the design files, Bill of Materials from this project and contact your manufacturing company for production. In this project we used JLCPCB for producing the PCB and assembling it. We used JLCPCB because of its competitive pricing and component availability.
 
 ##### Do I need to source special components for producing this board?
@@ -82,9 +80,9 @@ This project provides the following deliverables for system integrators and hard
 |  [mosaicG5_RPi_HAT.kicad_pro](./Kicad/mosaicG5%20HAT/mosaicG5_RPi_HAT.kicad_pro)   |KiCad project |
 | [mosaicG5_RPi_HAT.kicad_pcb](./Kicad/mosaicG5%20HAT/mosaicG5_RPi_HAT.kicad_pcb) | KiCad layout |
 |  [mosaicG5_RPi_HAT.kicad_sch](./Kicad/mosaicG5%20HAT/mosaicG5_RPi_HAT.kicad_sch)  |KiCad schematic |
-|    | Project schematic library |
-|    |mosaic symbol |
-|    |mosaic footprint |
+| [mosaic-G5.STEP](./Kicad/mosaci-G5/mosaic-G5.STEP)  |mosaic-G5 3D |
+|  [LGA54_MOSAIC-MINI_SEP.kicad_mod](./Kicad/mosaci-G5/LGA54_MOSAIC-MINI_SEP.kicad_mod) |mosaic footprint |
+|  [MG5_1.step](./Kicad/mosaicG5%20HAT%203D/MG5_1.step)  |mosaicG5 HAT 3D |
 |[BOM](./BOM.xlsx)    | mosaicG5 HAT Bill of Materials |
 ### Is the project open-source?
 Yes, We made this open source so you can tinker, adapt, and create. If you are building your own robotics project, a spin-off device, or integrating GNSS into a larger system, this is a great starting point.
