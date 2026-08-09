@@ -23102,6 +23102,17 @@
 		)
 		(uuid "a989c9c5-8a65-417f-864c-0b6f6a271c52")
 	)
+	(text "Designed By: Laetitia.KF"
+		(exclude_from_sim no)
+		(at 391.16 276.86 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+		)
+		(uuid "b2174b1d-2b33-407d-b378-203632aaf271")
+	)
 	(text "LDO regulator 3.6v-3.3v"
 		(exclude_from_sim no)
 		(at 273.304 75.184 0)
