@@ -1,5 +1,9 @@
 # mosaicG5 HAT
 
+<img src="pictures/mosaicG5 HAT logo2.png" width="70%">
+
+
+
 |mosaicG5 HAT| A GNSS HAT fOr Raspberry Pi|
 |------|-------|
 |Author|  [laekaz](https://github.com/laekaz)|
