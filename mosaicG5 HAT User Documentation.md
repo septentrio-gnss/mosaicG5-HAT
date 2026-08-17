@@ -94,6 +94,26 @@ To communicate with UART1, use:
 
 ```/dev/serial0```
 
+To enable RPi's UART, go to /boot/config.txt and set enable_uart=1 at the end of the file. This could be done directly on SD card or using:
+
+```sudo nano /boot/config.txt```
+
+when using the second UART connected from the mosaic-G5 module t the RPi 
+
+add the line ```dtoverlay=uart3``` to the file to enable UART3 connected to the UART2 of the mosaic-G5 module
+
+* Reboot the Raspberry Pi for the changes to take effect.
+
+```sudo reboot```
+
+* After reboot check UART devices
+
+```ls -l /dev/ttyAMA* ```
+
+The output should be similar to:
+
+```/dev/ttyAMA3```
+
 ### GNSS Antenna
 
 To take full advantage of the multi-band and multi-constellation capabilities of the mosaicG5 HAT, it is recommended to use a high-quality multi-band GNSS antenna.
@@ -220,28 +240,9 @@ The follwing LEDs are defined on the mosaicHAT
 
 PPSO clock could be tuned using **setPPSParameters** command. While GPLEDs default mode is PVTLED, it could be configured to work in different modes (PVTLED, DIFFCORLED and TRACKLED) using setLEDMode command. Refer to the Hardware Manual for blinking behaviour of each mode. Both General Purpose LEDs (GL1 and GL2) could be directly controlled by Raspberry Pi GPIO.
 
-Just for illustration, the following python script runs GL1 and GL2 in alternate blinking mode. It is up to users to customize those LEDs as convenient for their applications.
+Just for illustration, the following python script runs GL1 and GL2  together with the GNSS code. When there is no GNSS data GL1 will turn on and when there is GNSS data GL2 will turn on.
 
-```
-import RPi.GPIO as GPIO # Import Raspberry Pi GPIO library
-from time import sleep # Import the sleep function from the time module
-
-GPIO.setwarnings(False) # Ignore warning for now
-GPIO.setmode(GPIO.BCM) # Use BCM pin numbering
-
-# Set pins 6 &26 to be output pins and set their initial values to low (off)
-GPIO.setup(26, GPIO.OUT, initial=GPIO.LOW) 
-GPIO.setup(6, GPIO.OUT, initial=GPIO.LOW) 
-
-while True: # Run forever
- GPIO.output(26, GPIO.HIGH) # Turn 26 on
- GPIO.output(6, GPIO.LOW) # Turn 26 off
- sleep(1) # Sleep for 1 second
- GPIO.output(26, GPIO.LOW) # Turn 26 off
- GPIO.output(6, GPIO.HIGH) # Turn 6 on
- sleep(1) # Sleep for 1 second
- ```
-
+Find the code [here](/Python%20code/MG5_RPI_LED_code.py)
 
 ### Reset mosaic-G5
 
@@ -287,6 +288,7 @@ For more information about the EVENT input functionality, see the **mosaic-G5 Re
 
 ### Python script
 
+Find the full code [here](/Python%20code/MG5_RPI_code.py)
 ```
 import serial   # Library used for UART / serial communication
 import time     # Library used for implementing timing delays
@@ -356,3 +358,12 @@ while True:
 serial_port.close()     # Close serial connection when the program terminates
 
 ```
+
+When you connect to the second UART change **COM1** to **COM2** o
+
+```serial_port.write(b'sno, Stream1, COM2, GGA, sec1\n')```
+and the serial port
+
+```serial_port = serial.Serial('/dev/ttyAMA3', 115200)```
+
+
