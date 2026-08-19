@@ -12,6 +12,11 @@
 |License| [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) and [open-source](https://www.oshwa.org/definition/) |
 
 
+
+<img src="./pictures/HAT.jpg" width="40%">
+
+
+
 ## Table of Content
 
 * [Introduction to mosaicG5 HAT](#introduction-to-mosaicg5-hat)
