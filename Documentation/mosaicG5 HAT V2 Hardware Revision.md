@@ -29,9 +29,8 @@ V2 is a hardware-only revision. No changes were made to the software, communicat
 | **LDO input margin** | Changed from **3.6 V - 3.3 V** to **3.7 V - 3.3 V** | Increases the voltage margin available to the LDO to maintain a stable 3.3 V output |
 
 ### FTDI Interface
-<img src="../pictures/FTDI V2.png" width="50%">
-
-<img src="../pictures/FTDI_PCB V2.png" width="50%">
+<img src="../pictures/FTDI V2.png" width="30%">
+<img src="../pictures/FTDI_PCB V2.png" width="30%">
 
 The FTDI pin arrangement was changed to follow the standard FTDI pinout, making it easier to connect compatible FTDI cables and adapters while maintaining the same UART2 functionality described in the V1 FTDI section.
 
