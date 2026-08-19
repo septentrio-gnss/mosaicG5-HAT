@@ -51,11 +51,7 @@ These parts of the design remain as described in the V1 documentation.
 
 ### Does V2 still work with the existing user documentation?
 
-Yes, V2 remains compatible with the existing mosaicG5 HAT V1 user documentation.
-
-No software changes are required.
-
-The communication interfaces and board functionality remain unchanged.
+Yes, V2 remains compatible with the existing mosaicG5 HAT V1 user documentation, with no software changes required, as the communication interfaces and board functionality remain unchanged.
 
 ## Revision Summary
 
