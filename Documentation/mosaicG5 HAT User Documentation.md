@@ -64,7 +64,7 @@ To enable communication between mosaicG5 HAT and Raspberry Pi (RPi), you should 
 Raspberry Pi OS
 * To enable RPi serial communication, go to terminal and run:
 
-```sudo raspi-config```
+  ```sudo raspi-config```
 
 * Select **Interfacing Options**, then from the menu select Serial Port.
 You will get the question:
@@ -75,28 +75,28 @@ select **Yes**.
 
 * Reboot the Raspberry Pi for the changes to take effect.
 
-```sudo reboot```
+  ```sudo reboot```
 
 * After reboot check UART devices
 
-```ls -l /dev/serial* ```
+  ```ls -l /dev/serial* ```
 
 The output should be similar to:
 
-```/dev/serial0 -> ttyAMA0```
+  ```/dev/serial0 -> ttyAMA0```
 
-```/dev/serial1 -> ttyS0```
+  ```/dev/serial1 -> ttyS0```
 
 On the RPi 4 
 serial0 maps to GPIO 14 and 15 which are connected to UART1 of the mosaic-G5. 
 
 To communicate with UART1, use:
 
-```/dev/serial0```
+  ```/dev/serial0```
 
 To enable RPi's UART, go to /boot/config.txt and set enable_uart=1 at the end of the file. This could be done directly on SD card or using:
 
-```sudo nano /boot/config.txt```
+  ```sudo nano /boot/config.txt```
 
 when using the second UART connected from the mosaic-G5 module t the RPi 
 
@@ -104,15 +104,15 @@ add the line ```dtoverlay=uart3``` to the file to enable UART3 connected to the 
 
 * Reboot the Raspberry Pi for the changes to take effect.
 
-```sudo reboot```
+  ```sudo reboot```
 
 * After reboot check UART devices
 
-```ls -l /dev/ttyAMA* ```
+  ```ls -l /dev/ttyAMA* ```
 
 The output should be similar to:
 
-```/dev/ttyAMA3```
+  ```/dev/ttyAMA3```
 
 ### GNSS Antenna
 
@@ -359,10 +359,10 @@ serial_port.close()     # Close serial connection when the program terminates
 
 ```
 
-When you connect to the second UART change **COM1** to **COM2** o
+When you connect to the second UART change **COM1** to **COM2** 
 
 ```serial_port.write(b'sno, Stream1, COM2, GGA, sec1\n')```
-and the serial port
+and the serial port should be:
 
 ```serial_port = serial.Serial('/dev/ttyAMA3', 115200)```
 
