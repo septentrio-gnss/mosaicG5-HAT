@@ -32,7 +32,7 @@ For the PCB only:
 
 For assembly:
 
-* Bill of Materials (BOM), the list of components used in the project with their reference designators. For this project check [BOM](./BOM.xlsx).
+* Bill of Materials (BOM), the list of components used in the project with their reference designators. For this project check [BOM](../BOM.xlsx).
 * Component Placement List (CPL), this file contains the exact position of each component on the board (X,Y and rotation). CPL is exported from KiCad however, you need to check with the manufacturer services to ensure the right placement for components.
 
 ### Ordering mosaic module
@@ -49,14 +49,14 @@ You can order the mosaic-G5 from Digi-Key, or you can contact Septentrio at www.
 ## General interfaces of mosaicHAT
 The board exposes the following interfaces:
 
-<img src="pictures/pcb + interface.png" width="80%">
+<img src="../pictures/pcb + interface.png" width="80%">
 
 
 ## Connecting to Raspberry Pi
 mosaicG5 HAT can be easily attached to Raspberry Pi as shown here:
 
-<img src="pictures/RPi1.jpg" width="40%">
-<img src="pictures/RPi2.jpg" width="40%">
+<img src="../pictures/RPi1.jpg" width="40%">
+<img src="../pictures/RPi2.jpg" width="40%">
 
 ### Preparing Raspberry Pi
 To enable communication between mosaicG5 HAT and Raspberry Pi (RPi), you should make sure required serial communication settings are configured.
@@ -124,7 +124,7 @@ GNSS antennas are available in different form factors and performance levels, ea
 
 For testing the board we used Tallysman antenna:
 
-<img src="pictures/antenna.jpg" width="30%">
+<img src="../pictures/antenna.jpg" width="30%">
 
 **NOTE**: The VANT (Antenna voltage) pad of mosaic-G5 module is directly connected to the external +5V pin. The internal bias control circuit detects overcurrent
 conditions (>150mA) and protects the module in case of short circuit. According to mosaic-G5 hardware manual, VANT accepts 3V to 5.5V power supply.
@@ -137,43 +137,43 @@ The receiver can operate in either **single-antenna** or **dual-antenna** mode. 
 
 **Single-antenna mode**
 
-Run:
+* Run:
 
-```
-setFrontendMode, SingleAnt
-```
-to configure the receiver for single-antenna mode at the next reboot.
+  ```
+  setFrontendMode, SingleAnt
+  ```
+* to configure the receiver for single-antenna mode at the next reboot.
 
-Then save the configuration:
+  Then save the configuration:
 
-```
-exeCopyConfigFile, Current, Boot
-```
+  ```
+  exeCopyConfigFile, Current, Boot
+  ```
 
-Finally, reboot the receiver:
+* Finally, reboot the receiver:
 
-```
-exeResetReceiver, Hard, none
-```
+  ```
+  exeResetReceiver, Hard, none
+  ```
 
 **Dual-antenna mode**
-Run:
+* Run:
 
-```
-setFrontendMode, DualAnt
-```
-to configure the receiver for dual-antenna mode at the next reboot.
+  ```
+  setFrontendMode, DualAnt
+  ```
+* to configure the receiver for dual-antenna mode at the next reboot.
 
-Then save the configuration:
+  Then save the configuration:
 
-```
-exeCopyConfigFile, Current, Boot
-```
-Finally, reboot the receiver:
+  ```
+  exeCopyConfigFile, Current, Boot
+  ```
+* Finally, reboot the receiver:
 
-```
-exeResetReceiver, Hard, none
-```
+  ```
+  exeResetReceiver, Hard, none
+  ```
 P3H, P6 and P8 can run both in single or dual mode deppending on how you configure it. connect both the antenner connectors when using dual mode. 
 
 #### Heading
@@ -182,7 +182,7 @@ You can use mosaic-G5 P3H for heading but **it's necessary to connect the two an
 
 RxTools can be used to monitor the heading.
 
-<img src="pictures/Heading.png" width="50%">
+<img src="../pictures/Heading.png" width="50%">
 
 ### USB communication
 
@@ -190,7 +190,7 @@ The mosaicG5 HAT via USB provides 2 USB serial ports that can be used with [Sept
 
 Septentrio's RxTools is a Software which can be used to communicate to the mosaic-G5 HAT and can be downloaded free of charge from the [Septentrio support site](https://www.septentrio.com/en/products/gps-gnss-receiver-software/rxtools#resources). Once you have downloaded it you can use Septentrio's RxControl and Data Link which can communicate with the receiver over a serial-port connection: select Serial Connection option when opening the connection to the receiver.
 
-<img src="pictures/rxcontrol.png" width="50%">
+<img src="../pictures/rxcontrol.png" width="50%">
 
 **NOTE:** That currently there's no RxTools release for RPi (ARM architecture). Thus, RxTools should be used on a regular PC.
 
@@ -200,17 +200,17 @@ A simple way to communicate with the mosaic-G5 receiver is to connect one of the
 * Both UART connections are  connected to the Raspberry-Pi for easie integration.
 
 ### FTDI-connector
-An extra serial port is made available and can be used as an FTDI. FTDI can also be used with some Bluetooth devices. There is a large variety of FTDI devices which can help in communicating with the mosaic G5 HAT.
+An extra serial port is made available and can be used as an FTDI. FTDI can also be used with some Bluetooth devices. There is a large variety of FTDI devices which can help in communicating with the mosaicG5 HAT.
 
 * The UART2 connection of the mosaic is exposed via pin header on the board. This can be usuable to connect an FTDI converter(eg. serial to Bluetooth or TLL to RS232 converter)
 
-<img src="pictures/FTDI_TTL.png" width="50%">
+<img src="../pictures/FTDI_TTL.png" width="50%">
 
 TTL to USB connection
 
-<img src="pictures/TLL_connection.png" width="50%">
+<img src="../pictures/TLL_connection.png" width="50%">
 
-Serial connection of mosaic G5 HAT could be tested using PuTTY
+Serial connection of mosaicG5 HAT could be tested using PuTTY
 
 Default COM-Port settings are:
 |Parameter     |Value         |
@@ -221,7 +221,7 @@ Default COM-Port settings are:
 |stop bits | 1    |
 |flow control | none|
 
-<img src="pictures/putty.png" width="50%">
+<img src="../pictures/putty.png" width="50%">
 
 Can use comment ```sno, Stream1, COM2, GGA, sec1``` to output GGA data on the UART2
 
@@ -231,12 +231,12 @@ The follwing LEDs are defined on the mosaicHAT
 |**LED**  |**Description**   |
 |-------|-------|
 |PWR    | Board State (ON/OFF)  |
-|GL1    | Conected to mosaic G5 and RPi GPIO1  |
+|GL1    | Conected to mosaic-G5 and RPi GPIO1  |
 |GL2 | Connected to mosaic-G5 and RPi GPIO26   |
 |PPS2 | Pulse Per Second  |
 |PPS1 | Pulse Per Second  |
 
-<img src="pictures/LED_indicators.png" width="50%">
+<img src="../pictures/LED_indicators.png" width="50%">
 
 PPSO clock could be tuned using **setPPSParameters** command. While GPLEDs default mode is PVTLED, it could be configured to work in different modes (PVTLED, DIFFCORLED and TRACKLED) using setLEDMode command. Refer to the Hardware Manual for blinking behaviour of each mode. Both General Purpose LEDs (GL1 and GL2) could be directly controlled by Raspberry Pi GPIO.
 
@@ -262,12 +262,12 @@ The receiver is able to generate an x-pulse-per-second (xPPS) signal aligned wit
 
 Polarity, frequency and pulse width of PPSO could be configured by **setPPSParameters** command.
 
-<img src="pictures/Eve&PPSO.png" width="50%">
+<img src="../pictures/Eve&PPSO.png" width="50%">
 
 By default, **PPSO2 is disabled**. It can be enabled and configured in **RxControl**:.
 
-<img src="pictures/PPS2.PNG" width="50%">
-<img src="pictures/PPS2_.png" width="25%">
+<img src="../pictures/PPS2.PNG" width="50%">
+<img src="../pictures/PPS2_.png" width="25%">
 
 
 Both PPS Output operate at 3.3 V logic levels. PPSO1 and PPSO2 are directly connected to an indicator LED. 
@@ -277,8 +277,8 @@ More information on the definition of PPS output or on how to configure the PPS 
 ### Events
 EVENTs could be tested directly on mosaicG5 HAT board by connecting PPS Output to one of the EVENTs pins. Note that this works with a single wire because they share the same GND. Here PPSO_1 is connected to EVENTB, with PPS interval set to 1 sec.
 
-<img src="pictures/event_console.png" width="40%">
-<img src="pictures/event.png" width="30%">
+<img src="../pictures/event_console.png" width="40%">
+<img src="../pictures/event.png" width="30%">
 
 To monitor Events you could use Rxcontrol, clicking on the expert console. once you have connected an output to the event pin you will see the data being recieved on the pin.
 

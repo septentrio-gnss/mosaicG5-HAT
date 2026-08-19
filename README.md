@@ -4,12 +4,12 @@
 
 
 
-|mosaicG5 HAT| A GNSS HAT fOr Raspberry Pi|
+|mosaicG5 HAT| Open-source GNSS HAT for Raspberry Pi|
 |------|-------|
 |Author|  [laekaz](https://github.com/laekaz)|
 |Maintainer| [Septentrio gnss github user](githubuser@septentrio.com)|
 |external website| https://github.com/septentrio-gnss/mosaicG5-HAT  |
-|License| [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) and [open source](https://www.oshwa.org/definition/) |
+|License| [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) and [open-source](https://www.oshwa.org/definition/) |
 
 
 ## Table of Content
@@ -29,11 +29,23 @@
 * [Disclaimer](#disclaimer)
 
 ## Introduction to mosaicG5 HAT
+
 ### What is the mosaicG5 HAT?
 The mosaicG5 HAT is an add-on board that brings high-precision GNSS (GPS) which integrates [mosaic-G5](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules) Septentrio's GNSS module with basic communications, allowing the system to receive signals from multiple GNSS constellations, such as GPS, Galileo, GLONASS, and BeiDo. 
 The goal of the design is to allow easy hardware prototyping and integration of the mosaic-G5 taking advantage of the computer ecosystem provided by the Raspberry pi environment.
 
 The board can also operate as a standalone device when powered through its USB connector or external power input pins.
+
+### Hardware Versions
+
+The mosaicG5 HAT is available in multiple hardware revisions. The latest revision, **V2**, introduces hardware improvements while maintaining compatibility with the software used with V1.
+
+| Version | Description | Software compatibility |
+|--------|--------------|------------------------|
+| **V1** | Initial production/reference design | Compatible |
+| **V2** | Hardware revision with improved hardware design | Compatible |
+
+For detailed information about the changes, advantages, disadvantages, and design decisions of V2, see the [mosaicG5 HAT V2 Hardware Revision](Documentation/mosaicG5%20HAT%20V2%20Hardware%20Revision.md) documentation.
 
 ### A HAT for Raspberry Pi?
 HAT stands for *Hardware Attached on Top*. It is a type of add-on board specifically designed to sit on top of a Raspberry Pi and connect directly to its 40-pin GPIO header. HATs follow certain standards so they fit neatly, communicate properly, and are powered safely from the Pi.
@@ -81,24 +93,24 @@ This project provides the following deliverables for system integrators and hard
 
 |Files         |Description   |
 |--------------|--------------|
-|  [mosaicG5_RPi_HAT.kicad_pro](./Kicad/mosaicG5%20HAT/mosaicG5_RPi_HAT.kicad_pro)   |KiCad project |
-| [mosaicG5_RPi_HAT.kicad_pcb](./Kicad/mosaicG5%20HAT/mosaicG5_RPi_HAT.kicad_pcb) | KiCad layout |
-|  [mosaicG5_RPi_HAT.kicad_sch](./Kicad/mosaicG5%20HAT/mosaicG5_RPi_HAT.kicad_sch)  |KiCad schematic |
+|  [mosaicG5_RPi_HAT.kicad_pro](./Kicad/mosaicG5%20HAT/V1/mosaicG5_RPi_HAT.kicad_pro)   |KiCad project |
+| [mosaicG5_RPi_HAT.kicad_pcb](./Kicad/mosaicG5%20HAT/V1/mosaicG5_RPi_HAT.kicad_pcb) | KiCad layout |
+|  [mosaicG5_RPi_HAT.kicad_sch](./Kicad/mosaicG5%20HAT/V1/mosaicG5_RPi_HAT.kicad_sch)  |KiCad schematic |
 | [mosaic-G5.STEP](./Kicad/mosaci-G5/mosaic-G5.STEP)  |mosaic-G5 3D |
 |  [LGA54_MOSAIC-MINI_SEP.kicad_mod](./Kicad/mosaci-G5/LGA54_MOSAIC-MINI_SEP.kicad_mod) |mosaic footprint |
 |  [MG5_1.step](./Kicad/mosaicG5%20HAT%203D/MG5_1.step)  |mosaicG5 HAT 3D |
-|[BOM](./BOM.xlsx)    | mosaicG5 HAT Bill of Materials |
+|[BOM](./Kicad/mosaicG5%20HAT/V1/BOM.xlsx)    | mosaicG5 HAT Bill of Materials |
 ### Is the project open-source?
-Yes, We made this open source so you can tinker, adapt, and create. If you are building your own robotics project, a spin-off device, or integrating GNSS into a larger system, this is a great starting point.
+Yes, We made this open-source so you can tinker, adapt, and create. If you are building your own robotics project, a spin-off device, or integrating GNSS into a larger system, this is a great starting point.
 
-Open source here means:
+Open-source here means:
 * All files fully editable
 * Freedom to modify, remix, and innovate
 * You can sell your version. No -NC limitations
 * May require attribution
 * Build on our work, push it further, and even make money doing it
 
-More info about licensing can be found here: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) and [open source](https://www.oshwa.org/definition/)
+More info about licensing can be found here: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) and [open-source](https://www.oshwa.org/definition/)
 
 ## Disclaimer
 This project is **offered as-is**. The main interfaces have been tested, but the design has not been fully checked or approved by the author or Septentrio. You are responsible for how you use it in your own projects. For guidance on working with Septentrio’s GNSS mosaic-G5 modules, we suggest reaching out to Septentrio directly.
@@ -108,11 +120,15 @@ Support website: https://www.septentrio.com/en/support
 
 This project provides two main documentation sections:
 
-- **[mosaicG5 HAT User Documentation](mosaicG5%20HAT%20User%20Documentation.md)**  
+- **[mosaicG5 HAT User Documentation](Documentation/mosaicG5%20HAT%20User%20Documentation.md)**  
   Contains information for users on how to install, configure, and use the mosaicG5 HAT.
 
-- **[mosaicG5 HAT Design Documentation](mosaicG5%20HAT%20Design%20Documentation.md)**  
+- **[mosaicG5 HAT Design Documentation](Documentation/mosaicG5%20HAT%20Design%20Documentation.md)**  
   Intended for hardware designers who want to understand, customize, or modify the reference design of the mosaicG5 HAT.
+- **[mosaicG5 HAT V2 Hardware Revision](Documentation/mosaicG5%20HAT%20V2%20Hardware%20Revision.md)**
+
+  Hardware revision with updated hardware design
+
 
 
 
