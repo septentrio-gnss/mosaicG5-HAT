@@ -38,14 +38,14 @@ The FTDI pin arrangement was changed to follow the standard FTDI pinout, making 
 
 No changes were made to:
 
-mosaic-G5 module
-Raspberry Pi interface
-UART functionality
-PPS functionality
-USB data interface
-Antenna connections
-LED functionality
-Clock reference
+- mosaic-G5 module
+- Raspberry Pi interface
+- UART functionality
+- PPS functionality
+- USB data interface
+- Antenna connections
+- LED functionality
+- Clock reference
 
 These parts of the design remain as described in the V1 documentation.
 
