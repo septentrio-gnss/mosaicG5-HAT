@@ -1,8 +1,9 @@
 # mosaicG5 HAT
 
-<img src="pictures/mosaicG5 HAT logo2.png" width="70%">
-
-
+<p align="center">
+<img src="pictures/mosaicG5 HAT logo2.png" width="40%">
+<img src="pictures/mosaicG5-HAT_ad.png" width="80%">
+</p>p
 
 |mosaicG5 HAT| Open-source GNSS HAT for Raspberry Pi|
 |------|-------|
