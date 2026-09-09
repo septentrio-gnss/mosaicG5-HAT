@@ -1,7 +1,7 @@
 # mosaicG5 HAT
 
 <p align="center">
-<img src="pictures/mosaicG5 HAT logo2.png" width="40%">
+<img src="pictures/mosaicG5 HAT logo2.png" width="30%">
 <img src="pictures/mosaicG5-HAT_ad.png" width="80%">
 </p>p
 
